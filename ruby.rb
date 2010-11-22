@@ -4,15 +4,15 @@
 require 'rubygems'
 require 'multipass'
 
-SITE_KEY = "Your Assistly subdomain"
-API_KEY = "Your Multipass API Key generated under Admin -> Channels -> Portal"
+SITE_KEY = "Your Site Key"
+API_KEY = "Your API Key"
 
 multipass_string = MultiPass.encode(
   SITE_KEY, 
   API_KEY, 
   :name => "John Doe",
   :email => "john.doe@yoursite.com", 
-  :uid => 123456, 
-  :expires => 5.minutes.from_now, 
-  :url_safe => true
+  :uid => "123456", 
+  :expires => (Time.now + 120), # Expire two minutes from now 
+  :url_safe => true # Convert unsafe characters
 )
