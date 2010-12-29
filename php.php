@@ -9,18 +9,17 @@ $iv = "OpenSSL for Ruby";
 
 $user_data = array(
 	'uid' => '123abc',
-  'customer_email' => 'testuser@yoursite.com',
-  'customer_name' => 'Test User',
-  'expires' => date("c", strtotime("+5 minutes"))
+	'customer_email' => 'testuser@yoursite.com',
+	'customer_name' => 'Test User',
+	'expires' => date("c", strtotime("+5 minutes"))
 );
 
 $data = json_encode($user_data);
 
 // AES encryption: 
 //   double XOR first block
-for ($i = 0; $i < 16; $i++)
-{
- $data[$i] = $data[$i] ^ $iv[$i];
+for ($i = 0; $i < 16; $i++) {
+	$data[$i] = $data[$i] ^ $iv[$i];
 }
 
 //   pad using block size of 16 bytes
