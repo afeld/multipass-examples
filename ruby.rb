@@ -10,8 +10,8 @@ API_KEY = "Your API Key"
 multipass_string = MultiPass.encode(
   SITE_KEY, 
   API_KEY, 
-  :name => "John Doe",
-  :email => "john.doe@yoursite.com", 
+  :customer_name => "John Doe",
+  :customer_email => "john.doe@yoursite.com", 
   :uid => "123456", 
   :expires => (Time.now + 120), # Expire two minutes from now 
   :url_safe => true # Convert unsafe characters
